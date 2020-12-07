@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tetris</title>
+    <link rel="shortcut icon" href="./assets/images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="./assets/images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="game-state"></div>
+    <div class="container">
+      <canvas id="game-frame" height=500 width=300></canvas>
+      <aside class="others">
+        <label for="#game-score">up next:</label>
+        <canvas id="game-score"></canvas>
+        <div class="score-board">
+          <div>
+            <label>score</label>
+            <span class="score">0.0</span>
+          </div>
+          <div>
+            <label>high score</label>
+            <span class="high-score">0.0</span>
+          </div>
+          <div>
+            <label>time elapsed</label>
+            <span class="elapsed-time">0 seconds</span>
+          </div>
+          <div>
+            <label>level - </label>
+            <span class="game-level">1</span>
+          </div>
+        </div>
+      </aside>
+    </div>
+    <script src="./main.js" type="module"></script>
+  </body>
+</html>
