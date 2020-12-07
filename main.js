@@ -82,8 +82,6 @@ const handleKeyDown = () => {
       console.log("game over!");
       game.state = GAME_STATES.GAMEOVER;
       togglePause();
-    } else {
-      // console.log("continue...");
     }
   }
   timeBucket = 0;
@@ -104,7 +102,6 @@ const rotate = () => {
 };
 
 const update = (time = 0) => {
-  // console.log("hi");
   game.timeInterval = 1100 - game.speed * speedFactor;
   const deltaTime = time - lastTime;
   lastTime = time;
@@ -144,15 +141,11 @@ const update = (time = 0) => {
 const start = (time) => {
   update(time);
   game.music.play();
-  // .then((res) => {
-  //   console.log("playing music...", res);
-  // })
-  // .catch((err) => console.log(err));
 };
 
 const togglePause = () => {
   hold = !hold;
-  console.log("holdstate", hold);
+  // console.log("holdstate", hold);
   if (game.state === GAME_STATES.PAUSED) {
     game.state = GAME_STATES.RUNNING;
   } else if (game.state === GAME_STATES.RUNNING) {
@@ -163,15 +156,10 @@ const togglePause = () => {
     cancelAnimationFrame(game.frameId);
   } else {
     if (game.state !== GAME_STATES.GAMEOVER) {
-      console.log("cocl");
       start(lastTime);
     }
   }
-  // gamePaused = !gamePaused;
   if (!hold && game.state === GAME_STATES.GAMEOVER) {
-    // game.reset().then((res) => {
-    // });
-    console.log("when i run?");
     timer = 0;
     let count = 3;
     let iid = setInterval(() => {

@@ -1,5 +1,5 @@
 import { Field, Player } from "./datastructures.js";
-import { colors, keys, GAME_STATES } from "./variables.js";
+import { colors, GAME_STATES } from "./variables.js";
 
 export default class Game {
   constructor(options = {}) {
@@ -59,13 +59,9 @@ export default class Game {
     this.mappedField = new Field(this.columns, this.rows);
     this.player.score = 0.0;
     this.player.lastScore = 0.0;
-    // return new Promise((res) => {
-    //   res(this.state);
-    // });
   }
   updateSpeed() {
     const lastspeed = this.speed;
-    // const { player, music, speed } = this;
     if (this.player.score > 100) {
       this.speed += 0.2;
       this.music.playbackRate += 0.002 * this.speed;
